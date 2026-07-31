@@ -14,7 +14,7 @@ See the [Comparisons](comparisons.md) page for conformance test results submitte
 - [Submariner][submariner]: 0.13.3
 - [MCS controller for AWS Cloudmap][aws-mcs]: Alpha
 - [Antrea Multi-cluster][antrea-mcs]: Alpha
-- [Cilium Cluster Mesh][cilium-clustermesh]: Beta (from Cilium v1.17)
+- [Cilium Cluster Mesh][cilium-clustermesh]: Stable
 
 ## Implementations
 
@@ -67,11 +67,18 @@ Please follow this [guide][antrea-mcs-user-guide] for the first steps to set up 
 
 ### Cilium Cluster Mesh
 
+[![Conformance](https://img.shields.io/badge/MCS%20API%20Conformance%20v0.5.2-Cilium-green)](generated/v0.5.2/cilium/1.20.0.md)
+
 [Cilium][cilium] is an open source, cloud native solution for providing, securing, and observing network connectivity between workloads, fueled by the Kernel technology eBPF.
 
-[Cilium Cluster Mesh][cilium-clustermesh] allows you to connect the networks of multiple clusters in such as way that pods in each cluster can discover and access services in all other clusters of the mesh, provided all the clusters run Cilium as their CNI. This allows effectively joining multiple clusters into a large unified network, regardless of the Kubernetes distribution or location each of them is running.
+[Cilium Cluster Mesh][cilium-clustermesh] extends Cilium networking across multiple Kubernetes clusters and provides:
 
-Starting with Cilium version 1.17, Cilium Cluster Mesh also supports MCS API; see the corresponding [guide][cilium-mcs] for more information!
+- Pod-to-pod connectivity between clusters within a flat IP address space
+- Cluster-aware network policy enforcement
+- Cross-cluster service discovery and load-balancing
+- Service affinity controls to prefer local or remote backends
+
+Cilium Cluster Mesh is a conformant MCS API implementation; see the corresponding [guide][cilium-mcs] for more information!
 
 [cilium]: https://cilium.io/
 [cilium-clustermesh]: https://cilium.io/use-cases/cluster-mesh/

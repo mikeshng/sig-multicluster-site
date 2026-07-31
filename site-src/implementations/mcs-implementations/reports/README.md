@@ -41,7 +41,20 @@ reports/
    - `<impl-name>` is a lowercase identifier for your implementation (e.g., `submariner`, `gke`, `cilium`)
    - Optionally rename the file to your implementation version (e.g., `v0.23.0.yaml`, `2026-01-01.yaml`) — `report.yaml` is also fine
 
-3. **Open a pull request** against the
+3. **Document how to reproduce the report** in a Markdown file, either at
+   `reports/<impl-name>.md` or, if the steps are specific to one conformance version,
+   at `reports/<conformance-version>/<impl-name>/README.md`.
+
+4. **Update your entry in the [implementations list](../index.md)**: refresh your support
+   level and add or update your conformance badge so it points at your latest report:
+
+   ```markdown
+   [![Conformance](https://img.shields.io/badge/MCS%20API%20Conformance%20<conformance-version>-<Project>-<green/orange>)](generated/<conformance-version>/<impl-name>/<impl-version>.md)
+   ```
+
+   Use `green` if all required tests pass and `orange` otherwise.
+
+5. **Open a pull request** against the
    [sig-multicluster-site](https://github.com/kubernetes-sigs/sig-multicluster-site) repository.
 
 ## Requirements

@@ -9,6 +9,14 @@ groups:
           skipped: false
           conformant: true
           message: ""
+        - desc: A ServiceImport should publish whether EndpointSlice objects are present
+          ref: https://github.com/kubernetes/enhancements/tree/master/keps/sig-multicluster/1645-multi-cluster-services-api#using-endpointslice-objects-to-track-endpoints
+          labels: []
+          passed: true
+          failed: false
+          skipped: false
+          conformant: true
+          message: ""
         - desc: A service exported on two clusters with conflicting headlessness should apply the conflict resolution policy and report a Conflict condition on the ServiceExport
           ref: https://github.com/kubernetes/enhancements/tree/master/keps/sig-multicluster/1645-multi-cluster-services-api#headlessness
           labels: []
@@ -258,10 +266,10 @@ groups:
           message: ""
 suitefailure: ""
 dnsdomain: clusterset.local
-passed: 26
-total: 27
+passed: 27
+total: 28
 implementation:
     organization: Cilium
     project: Cilium
-    version: 1.20.0-dev
+    version: 1.20.0
     url: https://cilium.io/
